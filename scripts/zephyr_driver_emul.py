@@ -264,7 +264,8 @@ def update_main_c(
         fmt_parts, fmt_args = [], []
         for i, ch in enumerate(channels):
             get_lines.append(f"        && (sensor_channel_get({name}_dev, {ch}, &val{i}) == 0)")
-            label = ch.replace("SENSOR_CHAN_", "")
+            #label = ch.replace("SENSOR_CHAN_", "")
+            label = "SENSOR_CHAN"
             fmt_parts.append(f"{label}={{%.3f}}")
             fmt_args.append(f"sensor_value_to_double(&val{i})")
 
