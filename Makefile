@@ -6,10 +6,6 @@ FOLDER  ?= $(PRJ)
 BOARD   ?= native_sim
 OVERLAY ?= native_sim
 
-DRIVER  ?= sensirion_sht3xd_emul
-ITF     ?= i2c
-ADD     ?= 44
-
 ORANGE  :=\033[38;5;214m
 RESET   :=\033[0m
 
@@ -17,10 +13,19 @@ start:
 	python scripts/zephyr_env.py -p $(PRJ) -o $(FOLDER) -b $(BOARD) -y $(OVERLAY)
 
 add_driver:
-	python scripts/zephyr_driver_emul.py -m $(DRIVER) -i $(ITF) -a $(ADD) -o $(FOLDER)/modules
+	make -C $(PRJ) add-driver
+
+build:
+	make -C $(PRJ) west-build
+
+run:
+	make -C $(PRJ) west-run
 
 clean: 
-	rm -rf $(PRJ)
+	make -C $(PRJ) clean
+
+clean_all: 
+	rm -rf $(PRJ) modules
 
 help:
 	@printf "\n$(ORANGE)Zephyr Project Generator\n\n"
