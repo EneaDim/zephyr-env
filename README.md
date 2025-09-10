@@ -82,7 +82,7 @@ west flash
 From the root of this repository (where the `Makefile` and `zephyr_env.py` live), run:
 
 ```bash
-make
+make start
 ```
 
 This generates a new Zephyr app using the defaults shown above.
@@ -90,9 +90,8 @@ This generates a new Zephyr app using the defaults shown above.
 Then immediately build, run, clean, add a driver, and rebuild/run using the provided Make wrappers:
 
 ```bash
-cd blink
-make west-build
-make west-run
+make build
+make run
 ```
 
 Then to generate a sensor driver, define the parameter in the makefile in the app directory, then:
@@ -100,8 +99,8 @@ Then to generate a sensor driver, define the parameter in the makefile in the ap
 ```bash
 make clean
 make add-driver
-make west-build
-make west-run
+make build
+make run
 ```
 
 ### Customize the app
