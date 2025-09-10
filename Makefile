@@ -30,7 +30,9 @@ clean_all:
 help:
 	@printf "\n$(ORANGE)Zephyr Project Generator\n\n"
 	@printf "Usage:\n"
-	@printf "  make start [PRJ=<name>] [FOLDER=<dir>] [BOARD=<board>] [OVERLAY=<overlay>]\n\n"
+	@printf "  make start\n"
+	@printf "  make build\n"
+	@printf "  make run\n\n"
 	@printf "This runs:\n"
 	@printf "  python zephyr_env.py -p $(PRJ) -o $(FOLDER) -b $(BOARD) -y $(OVERLAY)\n\n"
 	@printf "Options (from zephyr_env.py):\n"
