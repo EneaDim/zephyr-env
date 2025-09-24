@@ -1,4 +1,4 @@
-# 📘 README.md — Zephyr Project Generator
+# 📘 Zephyr Project Generator
 
 > ✨ Generate a ready‑to‑build Zephyr application with one command, then build and flash with `west`.
 
