@@ -169,7 +169,7 @@ RESET   :=\\033[0m
 all: config build run
 
 add-driver:
-\tpython ../scripts/zephyr_driver_emul.py -m $(DRIVER) -i $(ITF) -a $(ADD) -o ../modules
+\tpython3 ../scripts/zephyr_driver_emul.py -m $(DRIVER) -i $(ITF) -a $(ADD) -o ../modules
 
 config:
 \tcmake -S . -B build -DBOARD=$(BOARD) -DDTC_OVERLAY_FILE=boards/$(OVERLAY).overlay

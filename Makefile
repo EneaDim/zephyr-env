@@ -10,7 +10,7 @@ ORANGE  :=\033[38;5;214m
 RESET   :=\033[0m
 
 start:
-	python scripts/zephyr_env.py -p $(PRJ) -o $(FOLDER) -b $(BOARD) -y $(OVERLAY)
+	python3 scripts/zephyr_env.py -p $(PRJ) -o $(FOLDER) -b $(BOARD) -y $(OVERLAY)
 
 add_driver:
 	make -C $(PRJ) add-driver

@@ -103,67 +103,6 @@ make build
 make run
 ```
 
-### Customize the app
-
-Override any variable directly on the command line:
-
-```bash
-make PRJ=hello_world FOLDER=apps/hello BOARD=qemu_riscv64 OVERLAY=app
-```
-
-Then:
-
-```bash
-cd app
-make add-driver
-make west-build
-make west-run
-```
-
-Examples:
-
-* Native simulation (default):
-
-```bash
-make PRJ=blink_sim BOARD=native_sim OVERLAY=native_sim
-```
-
-Then:
-
-```bash
-cd app
-make west-build
-make west-run
-make clean
-make add-driver MODULE=sensirion_sht3xd_emul INTERFACE=i2c ADDRESS=44
-make west-build
-make west-run
-```
-
-* ESP32‑S3 DevKit (uncomment or set explicitly):
-
-```bash
-make PRJ=blink_esp FOLDER=apps/blink_esp BOARD=esp32s3_devkitc/esp32s3/procpu OVERLAY=esp32s3_devkitc
-```
-
-Then:
-
-```bash
-cd app
-make west-build
-make west-run
-make clean
-make add-driver MODULE=sensirion_sht3xd_emul INTERFACE=i2c ADDRESS=44
-make west-build
-make west-run
-```
-
-What the command runs under the hood:
-
-```bash
-python zephyr_env.py -p $(PRJ) -o $(FOLDER) -b $(BOARD) -y $(OVERLAY)
-```
-
 ## 🧱 Build & Flash
 
 Change into the newly created application folder:
